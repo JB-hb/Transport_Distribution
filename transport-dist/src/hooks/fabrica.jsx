@@ -1,27 +1,10 @@
 import React from 'react'
 import { useState } from 'react
 
-export const useFabrica = () => {
+export const useFabrica = (camiones, locales) => {
 
-	const [camiones, setCamiones] = useState([])	
-	const [locales, setLocales] = useState([])
-
-	const agregarCamion = (camion) => {
-		let temp = camiones
-		temp.push(camion)
-		temp.sort((a,b) => {
-			return a.cargaMax - b.cargaMax
-		})
-		setCamiones(temp)
-	}
-
-	const agregarLocal = (local) => {
-		let temp = locales
-		temp.push(local)
-		temp.sort((a,b) => {
-			return a.totalCarga - b.totalCarga
-		})
-	}
+	const [camiones, setCamiones] = useState(camiones)	
+	const [locales, setLocales] = useState(locales)
 
 	const desplegarRuta = () => {
 	 	// metodo donde se llama por cada camion el metodo generar ruta
